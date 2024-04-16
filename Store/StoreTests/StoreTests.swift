@@ -22,6 +22,11 @@ final class StoreTests: XCTestCase {
         XCTAssertEqual("Hello world", Store().helloWorld())
     }
     
+    func testSubtotalOneItem() {
+        register.scan(Item(name: "Beans (8oz Can)", priceEach: 199))
+        XCTAssertEqual(199, register.subtotal())
+    }
+    
     func testOneItem() {
         register.scan(Item(name: "Beans (8oz Can)", priceEach: 199))
         XCTAssertEqual(199, register.subtotal())
